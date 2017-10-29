@@ -47,13 +47,13 @@ Printer = Usb(0x0416,0x5011)
 Printer.set(align=u'center', font=u'a', width=2, height=2, density=9, invert=False, smooth=True, flip=False)
 Printer.text(title+"\n")
 Printer.set(align=u'center', font=u'a', width=1, height=1, density=9, invert=False, smooth=True, flip=False)
-if not dayly_entry_list > 0:
+if len(dayly_entry_list) > 0:
     Printer.text("\n------- Heute -------\n\n")
 Printer.set(align=u'right', font=u'a', width=1, height=1, density=9, invert=False, smooth=True, flip=False)
 for item in dayly_entry_list:
     Printer.text('{:3s}  {:>27s}'.format( "[ ]", item) + "\n\n")
 Printer.set(align=u'center', font=u'a', width=1, height=1, density=9, invert=False, smooth=True, flip=False)
-if not entry_list > 0:
+if len(entry_list) > 1:
     Printer.text("\n------- Tasks -------\n\n")
 Printer.set(align=u'right', font=u'a', width=1, height=1, density=9, invert=False, smooth=True, flip=False)
 for item in entry_list:
